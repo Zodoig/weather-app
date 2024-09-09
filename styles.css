@@ -1,0 +1,627 @@
+body {
+    background-image: url(./assets/weather-background.png);
+    background-repeat: repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+* {
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 1.4rem;
+}
+
+header {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin: 0.9rem 2rem;
+    padding-left: 0;
+    width: 80vw;
+    min-width: fit-content;
+}
+
+header > a:hover {
+    transform: scale(1.2);
+}
+
+footer {
+    margin: 0;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F6C63A;
+    padding: 2rem; 
+    flex-direction: column;
+}
+
+footer > h5 {
+    font-size: 0.7rem;
+    color: rgb(18, 18, 105);
+    margin: 0;
+    padding: 0;
+}
+
+footer > h6 {
+    font-size: 0.6rem;
+    color: rgb(18, 18, 105);
+    margin: 0;
+    padding: 0;
+}
+
+#footer-logo {
+    height: 10rem;
+}
+
+#logo {
+    height: 15rem;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    color: white;
+
+}
+
+.place-input {
+    border-radius: 20px;
+    width: 10rem;
+    background-color:rgb(255, 225, 0);
+    text-align: start;
+    text-indent: 1rem;
+    height: 2rem;
+    color: white;
+    margin-top: 0.5rem;
+}
+
+input::placeholder {
+    color: #cabebe; 
+}
+
+.search-button, #detailed-search-btn, .collapsible-title {
+    height: 3rem;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: rgb(255, 225, 0);
+}
+
+.collapsible-title {
+    text-align: left;
+    text-indent: 1rem;
+    cursor: pointer;
+}
+
+.search-button:hover, #detailed-search-btn:hover {
+    transform: scale(1.05);
+}
+.search-button {
+    margin-top: 0.6rem;
+}
+
+.filter-lists h2 {
+    font-size: 1.6rem;
+    color: rgb(18, 18, 105);
+    
+}
+
+#detailed-search-btn {
+    width: 10rem;
+    align-self: center;
+}
+
+#detailed-city-name {
+    margin-top: 0.5rem;
+}
+
+.magnifying-glass {
+    height: 3rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 90vw;
+    margin: 2rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.weather-board, .filter-panel {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    background-color: #29a4f1d2;
+    color: white;
+    border-radius: 20px;
+    width: 90%;
+    padding: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    align-self: flex-start;
+    /* min-width: fit-content; */
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.filter-panel {
+    flex-direction: column;
+}
+
+.filter-panel * {
+    font-size: 1.1rem;
+}
+
+.filter-lists {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+p.search-text {
+    margin: 0;
+    color: rgb(18, 18, 105);
+    font-size: 1rem;
+}
+
+.detailed-search {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+#choose-filters {
+    font-size: 1.7rem;
+    color: #F6C63A;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.select-all-toggle{
+    margin-top: 1rem;
+}
+
+.check-box-container, input#select-all {
+    transform: scale(2); 
+    margin-right: 1rem;
+}
+
+.filters {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Two columns of equal width */
+    gap: 0.2rem;     
+}
+
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+    width: 25rem;
+    font-size: 1.7rem;
+    padding-top: 1.5rem;
+}
+
+.left-panel > * {
+    margin: 0;
+}
+
+.left-panel > .sunset-sunrise > img {
+    margin-top: 1.6rem;
+}
+
+.left-panel > .humidity-show > img {
+    margin-top: 2rem;
+}
+
+.left-panel > .temperature {
+    font-size: 3rem;
+    color: rgb(18, 18, 105);
+}
+
+.right-panel {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    min-width: fit-content;
+    /* align-items: center;
+    align-content: center;
+    justify-content: center; */
+}
+
+.right-panel > * {
+    margin-top: 0;
+    margin-bottom: 0;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.right-panel * {
+    align-content: baseline;
+    text-align: center;
+}
+
+.right-panel .sunset-sunrise img {
+    margin-top: 1.9rem;
+}
+
+/* .right-panel .max-min-temp {
+    font-size: 2rem;
+}
+.right-panel .day-month {
+    font-size: 2rem;
+} */
+
+.moon, .sun, .humidity-symbol {
+    height: 1rem;
+    display: inline;
+    margin-top: 1.5rem;
+    margin-right: 0.2rem;
+    margin-left: 0.4rem;
+}
+
+.next-day {
+    display: flex;
+    gap: 1rem;
+    justify-content: baseline;
+    width: 100%;
+
+}
+
+.sunset-sunrise {
+    display: flex;
+}
+
+.humidity-show {
+    display: flex;
+}
+
+.humidity {
+    font-size: 1.5rem;
+}
+
+.city-name {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.date-time {
+    margin-top: 0;
+    color: #f6fc4d;
+}
+
+.day-month {
+    color: #f6fc4d;
+}
+
+.right-panel .day-month {
+    width: 5rem;
+    min-width: 5rem;
+}
+
+.left-panel .weather-code {
+    width: 20rem;
+    color: #f6fc4d;
+    max-width: initial;
+}
+
+.left-panel .city-name, .detailed-results > .city-name {
+    color: rgb(18, 18, 105);
+}
+
+.weather-code {
+    color: #f6fc4d;
+    max-width: 7rem;
+    width: 7rem;
+    text-align: center;
+}
+
+.next-day .weather-code {
+    font-size: 1rem;
+}
+
+.admin-country {
+    font-size: 1.8rem;
+}
+
+.capitals {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+}
+
+.single-panel {
+    background-color: #29a4f1d2;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    border-radius: 20px;
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+    min-width: fit-content;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.single-panel > * {
+    margin: 0;
+    align-self: center;
+}
+
+.single-panel h2 {
+    font-size: 1.4rem;
+}
+
+.single-panel > .date-time {
+    font-size: 1.4rem;
+    color: #f6fc4d;
+}
+
+.single-panel > .temperature {
+    font-size: 2.5rem;
+    color: rgb(18, 18, 105);
+    align-self: center;
+}
+
+.single-panel > .weather-code {
+    color: #f6fc4d;
+    font-size: 1rem;
+    text-align: center;
+    align-self: center;
+}
+
+.single-panel  .humidity {
+    font-size: 2rem;
+}
+
+.single-panel .humidity-show {
+    align-self: center;
+}
+
+.single-panel .humidity-symbol {
+    height: 2rem;
+    margin-top: 2rem;
+}
+
+.single-panel .city-name {
+    color: rgb(18, 18, 105);
+    font-size: 2.5rem;
+}
+
+.weather-image-card {
+    width: 4rem;
+    align-self: center;
+}
+
+.detailed-results {
+    background-color: #29a4f1d2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    border-radius: 20px;
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+#quick-search-input {
+    height: 3.2rem;
+}
+
+.detailed-results canvas {
+    background-color: white;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.daily-detailed-flex div {
+    color: rgb(18, 18, 105);
+    font-size: 1.5rem;
+}
+
+.daily-detailed-flex h3 {
+    color: #f6fc4d;
+}
+
+@media (max-width: 1670px) {
+    .left-panel * {
+        font-size: 1.4rem;
+    }
+
+    .left-panel h1 {
+        font-size: 1.6rem;
+    }
+
+    .next-day {
+        gap: 0;
+    }
+}
+
+@media (min-width:576px) and (max-width: 1400px) {
+    .weather-board {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        padding-bottom: 2rem;
+    }
+
+    .next-day {
+        min-width: 600px;
+    }
+
+    .right-panel {
+        padding-left: 5%;
+        padding-right: 5%;
+        gap: 4rem;
+        width: 90%;
+    }
+
+    .next-day {
+        justify-content: space-around;
+    }
+
+    header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        align-self: center;
+    }
+
+    .filters {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.2rem;  
+    }
+
+    .capitals {
+        flex-direction: column;
+        width: 90vw;
+    }
+
+    .detailed-search {
+        width: 90vw;
+    }
+
+    * {
+        font-size: initial;
+    }
+
+    .right-panel .max-min-temp, .right-panel .day-month, .right-panel .weather-code {
+        font-size: 1.8rem;
+        
+    }
+
+    .next-day > img {
+        width: 3.5rem;
+    }
+
+    .right-panel .sunset-sunrise {
+        display: none;
+    }
+
+    .next-day > * {
+        margin: 0.5rem;
+    }
+
+    .right-panel .weather-code {
+        margin: inherit;
+    }
+
+    .check-box-container, input#select-all {
+        transform: scale(1.5);
+    }
+
+    .left-panel > .sunset-sunrise > img {
+        margin-top: 3rem;
+        height: 2rem;
+    }
+
+    .left-panel * {
+        font-size: larger;
+    }
+
+    .left-panel h1 {
+        font-size: 3rem;
+    }
+}
+
+
+@media (max-width: 575px) {
+    .weather-board {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        padding-bottom: 2rem;
+        font-size: 1rem;
+        width: 90%;
+    }
+
+    .next-day {
+        width: auto;
+        gap: 0;
+    }
+
+    .right-panel {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        align-self: center;
+    }
+
+    .filters {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.2rem;  
+    }
+
+    .capitals {
+        flex-direction: column;
+        width: 90vw;
+    }
+
+    .detailed-search {
+        width: 90vw;
+    }
+
+    * {
+        font-size: initial;
+    }
+
+    .right-panel .max-min-temp, .right-panel .day-month, .right-panel .weather-code {
+        font-size: 1rem;
+
+    }
+
+    .next-day > img {
+        width: 2rem;
+    }
+
+    .right-panel .sunset-sunrise {
+        display: none;
+    }
+
+    .next-day > .max-min-temp {
+        margin: 0;
+    }
+
+    .next-day > .day-month {
+        margin: 0;
+    }
+
+    .right-panel .weather-code {
+        margin: inherit;
+    }
+
+    .check-box-container, input#select-all {
+        transform: scale(1.5);
+    }
+
+    .left-panel > .sunset-sunrise > img {
+        margin-top: 1.7rem;
+    }
+}
