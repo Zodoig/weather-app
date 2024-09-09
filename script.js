@@ -37,34 +37,34 @@ const threeCapitals = [
 
 function getWeatherImage(code) {
   const weatherImages = {
-    "0": "https://openweathermap.org/img/wn/01d@2x.png",
-    "1": "https://openweathermap.org/img/wn/01d@2x.png",
-    "2": "https://openweathermap.org/img/wn/02d@2x.png",
-    "3": "https://openweathermap.org/img/wn/04d@2x.png",
-    "45": "https://openweathermap.org/img/wn/50d@2x.png",
-    "48": "https://openweathermap.org/img/wn/50d@2x.png",
-    "51": "https://openweathermap.org/img/wn/09d@2x.png",
-    "53": "https://openweathermap.org/img/wn/09d@2x.png",
-    "55": "https://openweathermap.org/img/wn/09d@2x.png",
-    "56": "https://openweathermap.org/img/wn/13d@2x.png",
-    "57": "https://openweathermap.org/img/wn/13d@2x.png",
-    "61": "https://openweathermap.org/img/wn/10d@2x.png",
-    "63": "https://openweathermap.org/img/wn/10d@2x.png",
-    "65": "https://openweathermap.org/img/wn/10d@2x.png",
-    "66": "https://openweathermap.org/img/wn/13d@2x.png",
-    "67": "https://openweathermap.org/img/wn/13d@2x.png",
-    "71": "https://openweathermap.org/img/wn/13d@2x.png",
-    "73": "https://openweathermap.org/img/wn/13d@2x.png",
-    "75": "https://openweathermap.org/img/wn/13d@2x.png",
-    "77": "https://openweathermap.org/img/wn/13d@2x.png",
-    "80": "https://openweathermap.org/img/wn/09d@2x.png",
-    "81": "https://openweathermap.org/img/wn/09d@2x.png",
-    "82": "https://openweathermap.org/img/wn/09d@2x.png",
-    "85": "https://openweathermap.org/img/wn/13d@2x.png",
-    "86": "https://openweathermap.org/img/wn/13d@2x.png",
-    "95": "https://openweathermap.org/img/wn/11d@2x.png",
-    "96": "https://openweathermap.org/img/wn/11d@2x.png",
-    "99": "https://openweathermap.org/img/wn/11d@2x.png"
+    "0": "http://openweathermap.org/img/wn/01d@2x.png",
+    "1": "http://openweathermap.org/img/wn/01d@2x.png",
+    "2": "http://openweathermap.org/img/wn/02d@2x.png",
+    "3": "http://openweathermap.org/img/wn/04d@2x.png",
+    "45": "http://openweathermap.org/img/wn/50d@2x.png",
+    "48": "http://openweathermap.org/img/wn/50d@2x.png",
+    "51": "http://openweathermap.org/img/wn/09d@2x.png",
+    "53": "http://openweathermap.org/img/wn/09d@2x.png",
+    "55": "http://openweathermap.org/img/wn/09d@2x.png",
+    "56": "http://openweathermap.org/img/wn/13d@2x.png",
+    "57": "http://openweathermap.org/img/wn/13d@2x.png",
+    "61": "http://openweathermap.org/img/wn/10d@2x.png",
+    "63": "http://openweathermap.org/img/wn/10d@2x.png",
+    "65": "http://openweathermap.org/img/wn/10d@2x.png",
+    "66": "http://openweathermap.org/img/wn/13d@2x.png",
+    "67": "http://openweathermap.org/img/wn/13d@2x.png",
+    "71": "http://openweathermap.org/img/wn/13d@2x.png",
+    "73": "http://openweathermap.org/img/wn/13d@2x.png",
+    "75": "http://openweathermap.org/img/wn/13d@2x.png",
+    "77": "http://openweathermap.org/img/wn/13d@2x.png",
+    "80": "http://openweathermap.org/img/wn/09d@2x.png",
+    "81": "http://openweathermap.org/img/wn/09d@2x.png",
+    "82": "http://openweathermap.org/img/wn/09d@2x.png",
+    "85": "http://openweathermap.org/img/wn/13d@2x.png",
+    "86": "http://openweathermap.org/img/wn/13d@2x.png",
+    "95": "http://openweathermap.org/img/wn/11d@2x.png",
+    "96": "http://openweathermap.org/img/wn/11d@2x.png",
+    "99": "http://openweathermap.org/img/wn/11d@2x.png"
   };
 
   return weatherImages[code] || "Unknown weather code";
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function fetchWeatherData(capital) {
   const { timezone, latitude, longitude, country, name } = capital;
 
-  fetch(`httpss://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,weather_code&timezone=${timezone}`)
+  fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,weather_code&timezone=${timezone}`)
     .then(response => response.json())
     .then(weatherData => {
       const capitalsPanel = document.querySelector('.capitals');
@@ -245,7 +245,7 @@ function handleEvent() {
 
   clearPreviousResults();
 
-  const apiGeoEndcode = `httpss://geocoding-api.open-meteo.com/v1/search?name=${inputValue}&count=1&language=en&format=json`;
+  const apiGeoEndcode = `https://geocoding-api.open-meteo.com/v1/search?name=${inputValue}&count=1&language=en&format=json`;
 
   console.log(apiGeoEndcode);
 
@@ -277,7 +277,7 @@ function handleEvent() {
         adminCountry.innerText = `${admin1}, ${country}`;
 
 
-        const apiWeatherEncode = `httpss://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset&timezone=${timezone}`;
+        const apiWeatherEncode = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset&timezone=${timezone}`;
         console.log(apiWeatherEncode);
         
         fetch(apiWeatherEncode)
@@ -507,7 +507,7 @@ function handleDetailedSearch() {
   clearPrevDetailedResults();
 
   // Step 1: First API call to get city coordinates
-  const apiGeoEndcode = `httpss://geocoding-api.open-meteo.com/v1/search?name=${inputValue}&count=1&language=en&format=json`;
+  const apiGeoEndcode = `https://geocoding-api.open-meteo.com/v1/search?name=${inputValue}&count=1&language=en&format=json`;
 
   fetch(apiGeoEndcode)
     .then(response => {
@@ -559,7 +559,7 @@ function handleDetailedSearch() {
         console.log('Current Filters:', currentFilters);
 
         // Step 3: Build the API URL
-        let apiWeatherEncode = `httpss://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}`;
+        let apiWeatherEncode = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}`;
 
         if (dailyFilters.length > 0) {
           apiWeatherEncode += `&daily=${dailyFilters.join(',')}`;
