@@ -235,9 +235,6 @@ p.search-text {
     display: flex;
     flex-direction: column;
     min-width: fit-content;
-    /* align-items: center;
-    align-content: center;
-    justify-content: center; */
 }
 
 .right-panel > * {
@@ -257,13 +254,6 @@ p.search-text {
 .right-panel .sunset-sunrise img {
     margin-top: 1.9rem;
 }
-
-/* .right-panel .max-min-temp {
-    font-size: 2rem;
-}
-.right-panel .day-month {
-    font-size: 2rem;
-} */
 
 .moon, .sun, .humidity-symbol {
     height: 1rem;
@@ -440,8 +430,6 @@ p.search-text {
     color: #f6fc4d;
 }
 
-
-
 /* MEDIA QUERIES */
 
 @media (max-width: 1670px) {
@@ -510,8 +498,7 @@ p.search-text {
     }
 
     .right-panel .max-min-temp, .right-panel .day-month, .right-panel .weather-code {
-        font-size: 1.8rem;
-        
+        font-size: 1.8rem;   
     }
 
     .next-day > img {

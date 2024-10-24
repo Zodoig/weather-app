@@ -27,7 +27,6 @@ document.getElementById('select-all').addEventListener('change', function() {
 
 
 //Collapsible window for advanced search filter table
-
 document.addEventListener('DOMContentLoaded', function() {
   const collapsibleTitle = document.querySelector('.collapsible-title');
   const collapsibleContent = document.querySelector('.collapsible-content');
@@ -105,9 +104,7 @@ function fetchWeatherData(capital) {
       singlePanel.appendChild(humidityPanel);
     });
 }
-
-
-
+//Show default 3 capitals on pageload
 threeCapitals.forEach(fetchWeatherData);
 
 lookUpCity.addEventListener('submit', (event) => {
@@ -118,9 +115,7 @@ lookUpCity.addEventListener('submit', (event) => {
 });
 
 function handleEvent() {
-
   const inputValue = inputField.value.trim();
-
   if (!inputValue) return;
 
   const defaultCapitals = document.querySelector(".capitals");
@@ -131,7 +126,6 @@ function handleEvent() {
   const apiGeoEndcode = `https://geocoding-api.open-meteo.com/v1/search?name=${inputValue}&count=1&language=en&format=json`;
 
   // console.log(apiGeoEndcode);
-
   fetch(apiGeoEndcode)
     .then(response => {
       if (!response.ok) {
@@ -151,7 +145,7 @@ function handleEvent() {
         let country = data.results[0].country;
         let city = data.results[0].name;
         let admin1 = data.results[0].admin1;
-        console.log('Longitude:', longitude, 'Latitude:', latitude);
+        // console.log('Longitude:', longitude, 'Latitude:', latitude);
 
         cityName.innerText = `${city}`;
 
@@ -241,7 +235,6 @@ function handleEvent() {
             leftPanel.appendChild(temperature);
             leftPanel.appendChild(weatherCode);
             leftPanel.appendChild(humidityPanel);
-            
 
             const rightPanel = document.createElement('div');
             rightPanel.className = 'right-panel';
@@ -289,7 +282,6 @@ function handleEvent() {
                 sunsetSunriseRight.appendChild(sunsetRight);
                 nextDay.appendChild(sunsetSunriseRight);
 
-
                 const weatherCodeRight = document.createElement('p');
                 weatherCodeRight.className = 'weather-code';
                 weatherCodeRight.innerHTML = getWeatherDescription(weatherData.daily.weather_code[index +1]);
@@ -300,7 +292,6 @@ function handleEvent() {
                 nextDayImage.alt = getWeatherDescription(weatherData.current.weather_code);
                 nextDay.appendChild(nextDayImage);
 
-
                 const maxMinTemp = document.createElement('p');
                 maxMinTemp.className = 'max-min-temp';
                 maxMinTemp.innerText = `${Math.floor(weatherData.daily.temperature_2m_max[index + 1])}°C / ${Math.floor(weatherData.daily.temperature_2m_min[index + 1])}°C`;
@@ -309,9 +300,7 @@ function handleEvent() {
             console.log(`Processing date: ${date} (original index: ${index + 1})`);
 });
           })
-
           .catch(error => console.error('Error fetching weather data:', error));
-          
       } else {
         cityName.innerText = "Name not recognised";
         cityName.style.fontSize = "2rem";
@@ -335,17 +324,14 @@ function handleEvent() {
     })
     .catch(error => console.error('Error fetching geocoding data:', error));
 
-  
   inputField.value = '';
   inputField.focus();
 }
 
 // Advanced Search function
-
 document.addEventListener('DOMContentLoaded', () => {
   const filterForm = document.querySelector("#filter-list");
   
-
   filterForm.addEventListener('submit', (event) => {
     event.preventDefault();
     handleDetailedSearch();
@@ -437,7 +423,6 @@ async function handleDetailedSearch() {
         if (!weatherResponse.ok) {
           throw new Error('Weather API response was not ok');
         }
-
         const weatherData = await weatherResponse.json();
         console.log('Weather data:', weatherData);
         const dateTime = document.createElement('p');
