@@ -78,12 +78,13 @@ footer > h6 {
     text-align: start;
     text-indent: 1rem;
     height: 2rem;
-    color: white;
+    color: rgb(3, 3, 3);
     margin-top: 0.5rem;
 }
 
 input::placeholder {
-    color: #cabebe; 
+    color: rgb(88, 79, 79);
+    font-style: italic;
 }
 
 .search-button, #detailed-search-btn, .collapsible-title {
@@ -198,7 +199,7 @@ p.search-text {
 
 .filters {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Two columns of equal width */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 0.2rem;     
 }
 
@@ -438,6 +439,10 @@ p.search-text {
 .daily-detailed-flex h3 {
     color: #f6fc4d;
 }
+
+
+
+/* MEDIA QUERIES */
 
 @media (max-width: 1670px) {
     .left-panel * {
