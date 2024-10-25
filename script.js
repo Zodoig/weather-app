@@ -122,6 +122,9 @@ function handleEvent() {
   defaultCapitals.style.display = 'none';
 
   clearPreviousResults();
+  clearPrevDetailedResults();
+  const collapsibleContent = document.querySelector('.collapsible-content');
+  collapsibleContent.style.display = 'none';
 
   const apiGeoEndcode = `https://geocoding-api.open-meteo.com/v1/search?name=${inputValue}&count=1&language=en&format=json`;
 
@@ -352,6 +355,8 @@ async function handleDetailedSearch() {
   
   clearPreviousResults();
   clearPrevDetailedResults();
+  const collapsibleContent = document.querySelector('.collapsible-content');
+  collapsibleContent.style.display = 'none';
 
   // API call to get city coordinates
   const apiGeoEndcode = `https://geocoding-api.open-meteo.com/v1/search?name=${inputValue}&count=1&language=en&format=json`;
